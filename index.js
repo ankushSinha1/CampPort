@@ -17,7 +17,6 @@ mongoose.connect("mongodb+srv://Ankush123:Ankush123@campportdatabase.ydn8cjc.mon
 
 app.use(bodyparser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-app.set('trust proxy', 1);
 app.use(mo("_method"));
 app.use(require('express').static(__dirname + "/public"))
 app.use(flash());
@@ -51,6 +50,6 @@ app.use("/campgrounds",campRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 //PORT config
-app.listen(process.env.PORT || 3000,process.env.IP, function(){
+app.listen(process.env.PORT || 3000, process.env.IP, function(){
     console.log("Server started...");
 })
