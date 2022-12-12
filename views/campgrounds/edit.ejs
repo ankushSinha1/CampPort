@@ -1,0 +1,28 @@
+<%- include ('../partials/header')%>
+<div class="content" style="opacity: 90%; font-size: larger;">
+    <div class="card form" style="width: 50%; margin: 30px auto; padding: 15px 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <p style="font-size: 60px; margin: auto;">Edit <%= foundCamp.title%></p>
+        <form action="/campgrounds/<%= foundCamp._id %>?_method=put" method="post" class="form">
+            <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
+                <label class="form-label"> Title</label>
+                <input type="text" value="<%= foundCamp.title%>" name="camp[title]" class="form-control">
+            </div>
+            <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
+                <label class="form-label"> Price per night</label>
+                <input type="number" value="<%= foundCamp.price%>" name="camp[price]" min="0.01" step="0.01" class="form-control">
+            </div>
+            <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
+                <label class="form-label"> Image-URL</label>
+                <input type="text" value="<%= foundCamp.img%>" name="camp[img]" class="form-control">
+            </div>
+            <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
+                <label class="form-label"> Caption</label>
+                <input type="text" value="<%= foundCamp.caption%>" name="camp[caption]" class="form-control">
+            </div>
+            <div>
+                <button  style="width: 30%; display: block; margin: 20px auto;" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<%- include ('../partials/footer')%>

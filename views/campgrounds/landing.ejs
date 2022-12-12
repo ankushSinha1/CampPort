@@ -1,0 +1,32 @@
+<%- include ('../partials/header')%>
+
+<div class="container content">
+    <header class="jumbotron">
+        <div class="container" style="text-align: center;  padding-top: 10px; background-color: rgb(201 218 212); opacity:85%; border-radius: 6px;">
+            <h1 style="margin-top: 10px; margin-bottom: 1px; font-size: 80px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                Welcome to CampPort
+            </h1>
+            <p style="padding: 2px; font-size: 20px;">Your guide to the campgrounds all over the world!</p>
+            <p style="padding: 7px;">
+                <a href="/campgrounds/new" class="btn btn-success" style="margin-bottom: 12px;">Add a campground</a>
+            </p>
+        </div>
+    </header>
+    <div class="row">
+        <% campground.forEach(function(camp){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail card" style="margin: 10px auto;">
+                    <img src="<%= camp.img%>" alt="error" class="card-img-top">
+                    <div class="card-body">
+                        <div class="caption">
+                            <h5 class="card-title"><%= camp.title%></h5>
+                            <p style="font-size: 14px;" class="card-text"><i> Posted by- @<%= camp.author.username%></i></p>
+                            <a href="/campgrounds/<%=camp._id%>" class="btn btn-primary btn-sm">More info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+<%- include ('../partials/footer')%>

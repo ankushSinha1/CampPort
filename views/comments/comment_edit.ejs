@@ -1,0 +1,15 @@
+<%- include ('../partials/header')%>
+<div class="content" style="opacity: 90%; font-size: larger;">
+    <div class="card form" style="width: 50%; margin: 30px auto; padding: 15px 15px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <p style="font-size: 50px; margin: auto; font-weight:normal;">Edit comment</p>
+        <form action="/campgrounds/<%= camp_id%>/comments/<%= comment._id %>?_method=put" method="post" class="form" style="margin-bottom: 0px;">
+            <div style="width: 70%; margin:10px auto;">
+                <textarea name="cmt[text]" cols="30" rows="10" class="form-control"><%= comment.text%></textarea>
+            </div>
+            <div>
+                <button style="width: 30%; display: block; margin: 20px auto 0px " class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+    <%- include ('../partials/footer')%>
