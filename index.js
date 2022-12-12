@@ -23,10 +23,6 @@ app.use(flash());
 
 //setting AUTH
 app.use(require('cookie-session')({
-    cookie:{
-        secure: true,
-        maxAge: 24*60*60*1000
-    },
     secret: "First project on webdev",
     resave: false,
     saveUninitialized: false
