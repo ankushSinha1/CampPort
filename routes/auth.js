@@ -32,10 +32,10 @@ router.post("/register", function(req, res){
 router.get("/login", function(req, res){
     res.render("../views/auth/login");
 })
-router.post("/login", passport.authenticate("local", 
+router.post("/login", passport.authenticate("local",
     {
         successRedirect: "/campgrounds",
-        successFlash: "Welcome Back",
+        successFlash: "Welcome Back!",
         failureRedirect: "/login",
         failureFlash: "Couldn't log you in"
     }
