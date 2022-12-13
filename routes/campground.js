@@ -9,7 +9,7 @@ let express     = require('express'),
 router.get("/", function(req, res){
     campground.find(function(err, data){
         if(err){
-            console.log(err)
+            req.flash("error", "Error loading page")
         }else{
             res.render("../views/campgrounds/landing", {campground: data});
         }
@@ -45,7 +45,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 router.get("/:id", function(req, res){
     campground.findById(req.params.id).populate("comment").exec(function(err, data){
         if(err){
-            console.log(err);
+            req.flash("error", "Couldn't find your campground");
         }else{
             res.render("../views/campgrounds/show", {campground: data})
         }

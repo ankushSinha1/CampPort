@@ -5,19 +5,19 @@
         <form action="/campgrounds" method="post" class="form">
             <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
                 <label for="username" class="form-label"> Title</label>
-                <input type="text" placeholder="Enter title" name="title" class="form-control">
+                <input type="text" placeholder="Enter title" name="title" class="form-control" required />
             </div>
             <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
                 <label for="username" class="form-label"> Price per night</label>
-                <input type="number" placeholder="Enter price" name="price" min="0.01" step="0.01" class="form-control">
+                <input type="number" placeholder="Enter price" name="price" min="0.01" step="0.01" class="form-control" required />
             </div>
             <div style="width: 70%; margin:5px auto; margin-bottom: 10px;">
                 <label for="username" class="form-label"> Image-URL</label>
-                <input type="text" placeholder="Enter image-url" name="img" class="form-control">
+                <input type="text" placeholder="Enter image-url" name="img" class="form-control" required />
             </div>
             <div style="width:70%; margin:5px auto; margin-bottom: 10px;">
                 <label for="username" class="form-label"> Caption</label>
-                <input type="text" placeholder="Enter caption" name="caption" class="form-control">
+                <input type="text" placeholder="Enter caption" name="caption" class="form-control" required />
             </div>
             <div>
                 <button style="width: 30%; display: block; margin: 20px auto;" class="btn btn-success">Submit</button>
